@@ -6,7 +6,7 @@
  * Time: 21:12
  */
 
-require_once 'Preview.php';
+include 'Preview.php';
 include 'Settings.php';
 
 $settings = new Settings;
