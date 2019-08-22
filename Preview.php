@@ -8,6 +8,9 @@
 
 declare(strict_types=1);
 
+/**
+ * Class Preview
+ */
 class Preview
 {
 
@@ -17,12 +20,19 @@ class Preview
     private $settings;
 
 
+    /**
+     * Preview constructor.
+     * @param PreviewSetting $settings
+     */
     public function __construct(PreviewSetting $settings)
     {
         $this->settings = $settings;
     }
 
-
+    /**
+     * @param array $text
+     * @return array
+     */
     public function getPreview(array $text): array
     {
         $resultPreview = [];
@@ -46,6 +56,11 @@ class Preview
 
     }
 
+    /**
+     * @param array $array
+     * @param array $preview
+     * @return string
+     */
     private function cutTextByStopWord(array $array, array $preview): string
     {
         $result = [];
@@ -72,6 +87,10 @@ class Preview
         return $result;
     }
 
+    /**
+     * @param string $text
+     * @return array
+     */
     private function cutTextByLength(string $text): array
     {
         $words = explode(" ", $text); // переводим строку в массив

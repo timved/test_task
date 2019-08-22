@@ -7,8 +7,12 @@
  */
 
 declare(strict_types=1);
+
 include 'PreviewSetting.php';
 
+/**
+ * Class Settings
+ */
 class Settings extends PreviewSetting
 {
     /**

@@ -19,7 +19,7 @@ class PreviewTest extends TestCase
 
     protected function setUp() : void
     {
-        $this->settings = new Settings(3, ['автомобиль']);
+        $this->settings = new Settings(5, ['автомобиль']);
 
         $this->preview = new Preview($this->settings);
     }
@@ -34,7 +34,8 @@ class PreviewTest extends TestCase
         $result = $this->preview->getPreview(['Sed ut perspiciatis автомобиль, unde iste  error sit voluptatem']);
         foreach ($result as $value){
             $resultArray = explode(" " , $value);
-            $this->assertEquals(3, count($resultArray));
+            $this->assertEquals(4, count($resultArray));
+            $this->assertSame('автомобиль,', array_pop($resultArray));
         }
 
     }

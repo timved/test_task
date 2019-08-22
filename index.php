@@ -14,10 +14,10 @@ include 'Settings.php';
  */
 $settings = new Settings(10,
     [
-        'Автомобиль',
+    'Автомобиль',
         'world2',
-        'слово'
-    ]
+        'слово1'
+]
 );
 
 /**
