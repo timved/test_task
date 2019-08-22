@@ -6,49 +6,29 @@
  * Time: 20:53
  */
 
-include 'SettInterface.php';
+declare(strict_types=1);
+include 'PreviewSetting.php';
 
-class Settings implements SettInterface
+class Settings extends PreviewSetting
 {
-    protected $length = 2 ;
-
-    protected $stopWords = [
-        'Автомобиль',
-        'world2',
-        'слово'
-    ];
-
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getLength()
+    public function getLength() : ?int
     {
         return $this->length;
     }
 
-    /**
-     * @param mixed $length
-     */
-    public function setLength($length)
-    {
-        $this->length = $length;
-    }
 
     /**
-     * @return mixed
+     * @return array|null
      */
-    public function getStopWords()
+    public function getStopWords() : ?array
     {
         return $this->stopWords;
     }
 
-    /**
-     * @param mixed $stopWords
-     */
-    public function setStopWords($stopWords)
-    {
-        $this->stopWords = $stopWords;
-    }
+
 
 
 

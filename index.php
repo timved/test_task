@@ -5,12 +5,35 @@
  * Date: 19.08.2019
  * Time: 21:12
  */
-
+declare(strict_types=1);
 include 'Preview.php';
 include 'Settings.php';
 
-$settings = new Settings;
-$str = ['Hello world5! автомобиль, слово...' , 'hello, hello2! слово2, aaaaa'];
+/**
+ * @var Settings $settings
+ */
+$settings = new Settings(10,
+    [
+        'Автомобиль',
+        'world2',
+        'слово'
+    ]
+);
+
+/**
+ * @var array $str
+ */
+$str = ['Sed ut perspiciatis автомобиль, unde iste  error sit voluptatem'];
+
+/**
+ * @var Preview $preview
+ *
+ */
 $preview = new Preview($settings);
+
+/**
+ * @var array $out
+ */
 $out = $preview->getPreview($str);
+
 var_dump($out);

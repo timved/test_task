@@ -19,7 +19,7 @@ class PreviewTest extends TestCase
 
     protected function setUp() : void
     {
-        $this->settings = new Settings();
+        $this->settings = new Settings(3, ['автомобиль']);
 
         $this->preview = new Preview($this->settings);
     }
@@ -31,10 +31,10 @@ class PreviewTest extends TestCase
 
     public function testGetPreview()
     {
-        $result = $this->preview->getPreview(['Hello world! автомобиль, тратата?','рш рш ршdfdsfs']);
+        $result = $this->preview->getPreview(['Sed ut perspiciatis автомобиль, unde iste  error sit voluptatem']);
         foreach ($result as $value){
             $resultArray = explode(" " , $value);
-            $this->assertEquals(2, count($resultArray));
+            $this->assertEquals(3, count($resultArray));
         }
 
     }
