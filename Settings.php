@@ -10,7 +10,7 @@ include 'SettInterface.php';
 
 class Settings implements SettInterface
 {
-    protected $length = 20 ;
+    protected $length = 2 ;
 
     protected $stopWords = [
         'Автомобиль',

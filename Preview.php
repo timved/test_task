@@ -33,17 +33,22 @@ class Preview
     {
 
         foreach ($text as  $value) {
+
             $words = explode(" ", $value); // переводим строку в массив
+
             $preview = array_slice($words, 0, $this->length); // обрезаем массив по кол-ву слов
+
+            $array = [];
             foreach ($preview as $item) {
                $array[] = preg_replace('/([?!:^~|@№$–=+*&%.,;\[\]<>()_—«»#\/]+)/u', '', mb_strtolower($item));
             }
 
 
-
+            $result = null;
             foreach ($this->stopWord as $word) {
               $result[] = array_search(mb_strtolower($word), $array); // ищем стоп слово
             }
+
 
             foreach ($result as $key2 => $item){
                 if (is_bool($item)){
@@ -59,9 +64,12 @@ class Preview
                 $result = implode(" ", $preview);
             }
 
-            return $result;
+
+            $mass[] =  $result;
 
         }
+
+        return $mass;
 
     }
 

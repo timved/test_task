@@ -31,9 +31,12 @@ class PreviewTest extends TestCase
 
     public function testGetPreview()
     {
-        $result = $this->preview->getPreview(['Hello world! автомобиль, тратата?','']);
-        $resultArray = explode(" " , $result);
-        $this->assertEquals(2, count($resultArray));
+        $result = $this->preview->getPreview(['Hello world! автомобиль, тратата?','рш рш ршdfdsfs']);
+        foreach ($result as $value){
+            $resultArray = explode(" " , $value);
+            $this->assertEquals(2, count($resultArray));
+        }
+
     }
 
 }

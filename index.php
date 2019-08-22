@@ -10,7 +10,7 @@ include 'Preview.php';
 include 'Settings.php';
 
 $settings = new Settings;
-$str = ['Hello world5! автомобиль, слово...'];
+$str = ['Hello world5! автомобиль, слово...' , 'hello, hello2! слово2, aaaaa'];
 $preview = new Preview($settings);
 $out = $preview->getPreview($str);
 var_dump($out);
